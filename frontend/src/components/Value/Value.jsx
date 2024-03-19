@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel, AccordionItemState } from 'react-accessible-accordion'
 import 'react-accessible-accordion/dist/fancy-example.css'
 import { MdOutlineArrowDropDown } from 'react-icons/md'
@@ -7,6 +7,7 @@ import data from '../../utils/accordion'
 
 
 const Value = () => {
+    const [className, setClassName] = useState(null);
     return (
         <section className="v-wrapper">
             <div className='paddings innerWidth flexCenter v-container'>
@@ -33,9 +34,16 @@ const Value = () => {
                     >
                         {data.map((item, i) => {
                             return (
-                                <AccordionItem key={i} uuid={i} className='accordionItem'>
+                                <AccordionItem key={i} uuid={i} className={`accordionItem ${className}`}>
                                     <AccordionItemHeading>
                                         <AccordionItemButton className='accordtionButton flexCenter'>
+                                            <AccordionItemState>
+                                                {({ expanded }) => (
+                                                    expanded ? setClassName('expanded') : setClassName('collapsed')
+
+                                                )}
+                                            </AccordionItemState>
+
                                             <div className='flexCenter icon'>{item.icon}</div>
                                             <span className='primaryText'>
                                                 {item.heading}

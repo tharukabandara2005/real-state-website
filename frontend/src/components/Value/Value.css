@@ -39,9 +39,16 @@
     border-radius: 5px;
 }
 
-.icon sv {
+.icon svg {
     fill: var(--blue);
 }
+
+.accordionItem.expanded {
+    box-shadow: var(--shadow);
+    border-radius: 6px;
+
+}
+
 .accordtionButton .primaryText {
     font-size: 1.1rem;
-}   
+}
