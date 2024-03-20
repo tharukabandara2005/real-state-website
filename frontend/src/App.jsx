@@ -6,6 +6,7 @@ import Residencies from "./components/Residencies/Residencies";
 import Value from "./components/Value/Value";
 import Contact from "./components/Contact/Contact";
 import Started from "./components/Started/Started";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Value />
       <Contact />
       <Started />
+      <Footer />
 
     </div>
 
